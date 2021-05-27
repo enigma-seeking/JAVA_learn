@@ -14,7 +14,8 @@ Math.rount(double)
 
 Math.pow(double,double)
 
-数据类型(这个之前没注意一共有8种类型，4种整型，2种浮点类型，1种Unicode编码的字符单元的字符类型char,一种是表示真假的Boolean)转换是优先级是double>float>long>int
+数据类型(这个之前没注意一共有8种类型，4种整型，2种浮点类型，1种Unicode编码的字符单元的字符类型char,
+一种是表示真假的Boolean)转换是优先级是double>float>long>int
 
 如果运算符得到一个值，其类型与左侧操作数的类型不同，就会发生强制类型转换。例如，如果x是一个int，则以下的语句
 `x += 3.5;`
@@ -44,10 +45,46 @@ if (str.equals(""))
 
 `str.compareTo("str1")`
 //如果第一个字符和参数的第一个字符不等，结束比较，返回第一个字符的ASCII码差值。
-// 如果第一个字符和参数的第一个字符相等，则以第二个字符和参数的第二个字符做比较，以此类推，直至不等为止，返回该字符的ASCII码差值。如果两个字符串不一样长，可对应字符又完全一样，则返回两个字符串的长度差值。
+// 如果第一个字符和参数的第一个字符相等，则以第二个字符和参数的第二个字符做比较，以此类推，直至不等为止，
+返回该字符的ASCII码差值。如果两个字符串不一样长，可对应字符又完全一样，则返回两个字符串的长度差值。
 
 `int indexOf (String str, int fromlndex)`
 最终返回的int和fromindex没关系都是从头开始计算的，只不过用fromindex可以少查一些点。
 ![img.png](img.png)
 
 ![img_1.png](img_1.png)
+
+for-each循环要会用，这是JAVA特意增加的功能。编程效率比较高，不用下标
+`for (variable : collection) statement`
+```java
+for (int element : a)
+System.out.println(element) :
+```
+
+数组复制
+一是两个变量指向一个数组
+```java
+int[] luckyNumbers = smallPrimes;
+luckyNumbers[S] = 12; // now smallPrimes[5] is also 12
+```
+
+二是两个变量两个数组，复制地址内容
+```java
+int[] copiedLuckyNumbers = Arrays.copyOf(luckyNumbers, luckyNumbers.length);
+```
+用Array.copyof方法，第二个参数是新数组的长度。比原数组长就补零，短就截取原数组前几位。
+
+命令行参数，每一个Java 应用程序都有一个带String arg[]参数的main 方法。
+这个参数表明main 方法将接收一个字符串数组， 也就是命令行参数。
+![img_2.png](img_2.png)
+在Java 应用程序的main 方法中， 程序名并没有存储在args 数组中
+例如, 当使用下列命令运行程序时
+java Message -h world
+args[0] 是“ -h”， 而不是“ Message” 或“ java”。
+
+对象与类
+Object-oriented programming (OOP)
+类与类之间的关系
+依赖(uses-a)
+聚合(has-a)
+继承(is-a)
