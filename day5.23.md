@@ -56,20 +56,20 @@ if (str.equals(""))
 
 for-each循环要会用，这是JAVA特意增加的功能。编程效率比较高，不用下标
 `for (variable : collection) statement`
-```java
+```
 for (int element : a)
 System.out.println(element) :
 ```
 
 数组复制
 一是两个变量指向一个数组
-```java
+```
 int[] luckyNumbers = smallPrimes;
 luckyNumbers[S] = 12; // now smallPrimes[5] is also 12
 ```
 
 二是两个变量两个数组，复制地址内容
-```java
+```
 int[] copiedLuckyNumbers = Arrays.copyOf(luckyNumbers, luckyNumbers.length);
 ```
 用Array.copyof方法，第二个参数是新数组的长度。比原数组长就补零，短就截取原数组前几位。
@@ -88,3 +88,78 @@ Object-oriented programming (OOP)
 依赖(uses-a)
 聚合(has-a)
 继承(is-a)
+
+构造器的名字应该与类名相同。因此Date 类的构造器名为Date。要想构造一个Date对象，
+需要在构造器前面加上new操作符，如下所示：
+
+new Date()
+
+这个表达式构造了一个新对象。
+`Date birthday = new Date();`
+
+要注意这里birthday不是对象，而是对象变量，对象变量只是引用对象，并不是对象。
+
+更改器方法和访问器方法。
+
+更改器方法，访问并修改对象。
+
+访问器方法，访问但不修改对象，例如String类的toUpperCase.
+只是返回大写的字符串，但是没有修改对象
+
+示例程序中包含两个类：Employee类和带有public访问修饰符的EmployeeTest类。 EmployeeTest类包含了main方法，其中使用了前面介绍的指令。
+
+源文件名是EmployeeTest.java，这是因为文件名必须与public类的名字相匹配。在一个源文件中，只能有一个公有类，但可以有任意数目的非公有类。
+
+构造器总是伴随着new操作符的执行被调用，
+而不能对一个已经存在的对象调用构造器来达到重新设置实例域的目的。
+
+•构造器与类同名
+•每个类可以有一个以上的构造器
+•构造器可以有0 个、1 个或多个参数
+•构造器没有返回值
+•构造器总是伴随着new 操作一起调用
+
+
+
+对象的内存解析
+
+![img_3.png](img_3.png)
+
+JVM主要讲这部分，
+关键是虚拟机栈、堆、方法区
+堆heap 主要存放对象实例
+
+栈  stack用于存储局部变量
+
+方法区  存放类信息、变量、静态域
+
+for example
+
+//常见person类对象
+
+Person p1 = new Person();
+
+Person p2 = new Person();
+
+Person p3 = p1; //这个并不是新创建对象是新声明变量
+
+对p3修改就是对p1修改
+
+//调用属性
+
+p1.name = "tom";
+
+p1.isMale = true;
+
+//调用方法
+
+p1.print();
+
+p1.sleep();
+
+p1.eat();
+
+p1.talk("Chinese");
+
+
+
