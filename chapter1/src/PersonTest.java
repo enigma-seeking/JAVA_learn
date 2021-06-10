@@ -31,6 +31,7 @@ class Person{
 
     //方法：描述类应该具有的功能
 //  方法可以用static、final、abstract来修饰
+//    方法使用中可以调用当前类的属性和方法
 
     public void eat(){
         String food = "pizza";  //定义在方法内的是局部变量
