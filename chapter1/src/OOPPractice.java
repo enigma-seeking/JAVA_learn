@@ -30,10 +30,16 @@ public class OOPPractice {
             stus[i].score = (int) (Math.random()*101);
             System.out.println(stus[i].state);
         }
+        
 
     }
 
-
+    /**
+     * @discribe 画矩形的*
+     * @param a
+     * @param b
+     * @return 面积
+     */
     public int method(int a,int b){  //这个方法是定义在主类里的
         for (int i=0;i < a;i++){
            for (int j=0;j<b;j++){
@@ -72,3 +78,13 @@ class student{
     int score ;
 }
 
+class Phone{
+    double price;
+    public void sendEmail(){
+        System.out.println("发送邮件");
+    }
+
+    public void playGame(){
+        System.out.println("玩游戏");
+    }
+}
