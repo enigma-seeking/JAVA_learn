@@ -39,11 +39,37 @@ class MethodArgsTest {
 }
 
 class ValueTransferTest {
-    /*
+    /**
     方法形参的的传递机制：值传递
     1.形参：方法定义时，声明的小括号内的参数
     2.实参：方法调用时。实际传递给形参的数据
-
-
      */
+    public static void main(String[] args) {
+        Date data = new Date();
+        data.m = 10;
+        data.n = 20;
+        System.out.println("m = " + data.m+", n = "+data.n);
+        data.swap(data);
+        System.out.println("m = " + data.m+", n = "+data.n);
+    }
 }
+
+class Date{
+    int m;
+    int n;
+    public void swap(Date data) {
+        int temp = data.m;
+        data.m = data.n;
+        data.n = temp;
+    }
+}
+
+/**
+ * 1.什么是方法的重载？
+ * 同类、相同方法名；参数列表不同
+ * 2.说明JAVA方法中的参数传递机制的具体体现？
+ * 数据时基本数据类型时：数据值
+ * 引用数据类型时：地址值（含变量的数据类型）
+ * 3.
+ */
+

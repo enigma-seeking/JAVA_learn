@@ -3,6 +3,8 @@ import java.util.ArrayList;
 /**
  * Created by YuxuanXu on 2021/6/10
  */
+
+
 public class OOPPractice {
 
     public static void main(String[] args) {
@@ -87,6 +89,7 @@ public class OOPPractice {
         return a*b;
     }
 }
+
 class Person1{
     String name;
     int age;
@@ -102,10 +105,27 @@ class Person1{
         return this.age;
     }
 }
+
 class Circle{
     double radius;
     public double calculateArea(){
         return Math.PI*this.radius*this.radius;
+    }
+}
+
+class PassObject{
+    public static void printAreas(Circle c, int time){
+        for (int i = 1; i <= time; i++) {
+            c.radius = i;
+            System.out.printf("%.0f, \t %.2f",c.radius,c.calculateArea());
+            System.out.println();
+        }
+
+    }
+
+    public static void main(String[] args) {
+        Circle c = new Circle();
+        printAreas(c,5);
     }
 }
 
@@ -134,6 +154,4 @@ class PhoneMall{
         phone.sendEmail();
         phone.playGame();
     }
-
-
 }
