@@ -191,3 +191,8 @@ JVM内存结构
 
 <img src="D:\JAVA_learn\day6.10.assets\image-20210611162543108.png" alt="image-20210611162543108" style="zoom:33%;" />
 
+
+
+
+
+![image-20210622214621226](D:\JAVA_learn\day6.10.assets\image-20210622214621226.png)
