@@ -1,5 +1,5 @@
 package ExtendsTest;
-/*
+/**
  * 面向对象的特征之二：继承性    why?
  * 
  * 一、继承性的好处：
