@@ -23,6 +23,11 @@ package org.bjtu.polymorphism;
  编译和运行时：重载，在调用前，编译器就已经确定了要调用的方法了，成为早绑定或静态绑定
  多态，知道方法被调用的哪一个时刻，编译器才知道调用哪一个。
 
+ ***************************************************************************
+ 注意：不能调用子类特有的方法，因为编译时编译器认为是父类对象。这么做编译会报错。
+ 那怎么才能用呢？
+
+
  */
 public class PersonTest {
     public static void main(String[] args) {
@@ -49,6 +54,30 @@ public class PersonTest {
         p2.eat();
         p2.walk();
 //      p2.earnMoney(); 这就会报错，因为编译时用的是父类
+        //有了对象的多态性之后，内存中实际加载了子类特有的属性和方法，但是由于变量声明为父类类型
+        // 导致编译时只能调用父类中的方法
 
+        //如何解决这一问题，强转类型,使用强制类型转换符
+        //也称之为向下转型。注意不能平级转换，例如同一个直接父类不能相互转换，为了避免向下转型时出现异常 加了一个关键字
+        // instenceof
+        // a instenceof A:判断对象a是否是类A的实例，如果是那么返回true。
+        Man m = (Man) p2;
+        if (p2 instanceof Woman){
+
+            Woman w = (Woman) p2;
+
+        }
+        //练习
+        //问题一：编译时通过，运行不通过
+        Person p3 = new Man();
+        Woman w2 = (Woman) p3;
+
+        //问题二：编译不通过
+        Person p4 = new Man();
+        //p4.earnMoney();
+
+        //问题三：编译运行都通过
+        Object obj = new Woman();
+        Person p5 = (Person) obj;
     }
 }
