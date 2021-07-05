@@ -59,7 +59,7 @@ public class Student extends Person {
 //	public int info1(){
 //		return 1;
 //	}
-	
+
 //	public void walk(int distance){
 //		System.out.println("重写的方法");
 //	}
@@ -68,6 +68,7 @@ public class Student extends Person {
 	@Override
 	public void walk(int distance) {
 		System.out.println("重写的方法");
+		System.out.println("重写");
 	}
 
 }

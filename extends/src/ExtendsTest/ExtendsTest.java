@@ -48,6 +48,7 @@ public class ExtendsTest {
 		System.out.println(s1.getAge());
 		
 		s1.breath();
+		System.out.println("hello");
 		
 		
 		Creature c = new Creature();
